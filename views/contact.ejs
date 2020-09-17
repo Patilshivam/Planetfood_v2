@@ -1,0 +1,34 @@
+<%- include('./partials/header') %> 
+
+<section class="mb-4">
+
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you withina matter of hours to help you.</p>
+
+    <div class="container">
+        <div class="col-md-12 mb-md-0 mb-5">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email">Name</label>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email">
+                  </div>
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" placeholder="Enter email" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Subject</label>
+                  <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Message</label>
+                    <textarea type="text" class="form-control" id="message" name="message" rows="2"></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>    
+
+        </div>    
+    </div>
+        
+<%- include('./partials/footer') %> 

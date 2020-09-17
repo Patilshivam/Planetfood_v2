@@ -1,0 +1,50 @@
+<%- include('./partials/header') %> 
+    
+    <div class="jumbotron container">
+        <h1 class="display-4" style="color: lightslategrey">Planetfood</h1>
+        <p class="lead" style="color: black">What we can serve you <span class="glyphicon glyphicon-glass"></span></p>
+        <p style="color: black">We bake food with love <span class="glyphicon glyphicon-heart"></span> and joy <span class="glyphicon glyphicon-music"></span> so you can enjoy our food.</p>    
+    </div>
+     
+<div class="container">      
+    <div class="row">
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="display-4">CATEGORIES</h1>   
+            <p class="lead">
+                <a class="btn btn-primary btn-md" href="/categories/categorylist" role="button">View</a>
+                <a class="btn btn-primary btn-md" href="/categories/addcategory" role="button">Add</a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="display-4">PRODUCTS</h1> 
+            <p class="lead">
+                <a class="btn btn-primary btn-md" href="/products/productslist" role="button">View</a>
+                <a class="btn btn-primary btn-md" href="/products/addproduct" role="button">Add</a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="display-4">EMPLOYEES</h1> 
+            <p class="lead">
+                <a class="btn btn-primary btn-md" href="/employees/employeeslist" role="button">View</a>
+                <a class="btn btn-primary btn-md" href="/employees/addemployee" role="button">Add</a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="display-4">ORDERS</h1> 
+            <p class="lead">
+                <a class="btn btn-primary btn-md" href="/orders/makeorder" role="button">Make Order</a>
+                <a class="btn btn-primary btn-md" href="/orders/vieworder" role="button">View</a>
+                <a class="btn btn-primary btn-md" href="/orders/datewise" role="button">Date Wise</a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="display-4">ORDER DETAILS</h1> 
+            <p class="lead">
+                <a class="btn btn-primary btn-md" href="/orderdetails/vieworderdetails" role="button">View OrderDetails</a>
+            </p>
+        </div>
+    </div>
+  
+</div>    
+
+<%- include('./partials/footer') %> 

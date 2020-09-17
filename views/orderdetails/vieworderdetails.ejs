@@ -1,0 +1,27 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Product Id</th>
+            <th>Quantity</th>
+            <th>Cost ( <i class="fa fa-rupee"></i> )</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% orderdetails.forEach(orderdetail => { %> 
+                <tr>
+                    <td><%= orderdetail.oId %></td>
+                    <td><%= orderdetail.pId %></td>
+                    <td><%= orderdetail.quantity %></td>
+                    <td> <i class="fa fa-rupee"></i> <%= orderdetail.cost %></td>
+                </tr>
+             <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer') %>   
+

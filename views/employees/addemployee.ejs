@@ -1,0 +1,41 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 10px auto;">
+            <div style="padding: 10px;">
+                <h2 style="margin: 10px auto;"><span class="glyphicon glyphicon-plus"></span> Add Employee</h2>
+            </div> 
+            <form action="/employees/addemployee" method="POST">
+                Enter Employee Id : 
+                <div class="form-group">
+                    <input type="text" class="form-control" name="employee[employeeId]">
+                </div>
+                Enter Employee Name :
+                <div class="form-group">
+                    <input type="text" class="form-control" name="employee[employeeName]">
+                </div>
+                Select Employee Job : 
+                <div class="form-group"> 
+                    <select class="form-control" name="employee[job]">
+                        <option value="Admin">Admin</option>
+                        <option value="Cashier">Cashier</option>
+                    </select>
+                </div>
+                Enter Employee Salary <i class="fa fa-rupee"></i>:
+                <div class="form-group">
+                    <input type="text" class="form-control" name="employee[salary]">
+                </div>
+                Enter Employee Image :
+                <div class="form-group">
+                    <input type="text" class="form-control" name="employee[image]">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Add Employee</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %> 

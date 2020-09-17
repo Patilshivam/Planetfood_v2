@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title> 
+        PLANETFOOD
+    </title> 
+    <!-- icon link -->
+    <link rel = "icon" href = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQyzXbpAxicgZCx0MOgvbfweEKVDYY2aETS1A&usqp=CAU" type = "image/x-icon"> 
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> PLANETFOOD</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% if(!currentUser) { %>
+                    <li><a href="/register">Sign up</a></li>
+                    <li><a href="/login">Login</a></li>
+                <% } else { %>
+                    <% if(currentUser.usertype === 'Admin') { %>
+                        <li><a href="/employees/<%= currentUser.employeeId %>/view">Log In As <%= currentUser.username %></a></li>
+                        <li><a href="/register">Register Employee</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } else { %>
+                        <li><a href="/employees/<%= currentUser.employeeId %>/view">Log In As <%= currentUser.username %></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } %>     
+                <% } %>
+            </ul>     
+        </div>
+    </div>
+</nav> 
+<body>
+  

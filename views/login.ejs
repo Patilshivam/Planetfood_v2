@@ -1,0 +1,27 @@
+<%- include('./partials/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 10px auto;">
+            <div style="padding: 10px;">
+                <h2 style="margin: 10px auto;"><i class="fa fa-unlock"></i> User Login</h2>
+            </div> 
+            <form action="/login" method="POST">
+                Enter UserName : 
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username">
+                </div>
+                Enter Password :
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Login</button>
+                    <a href="/register">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %> 

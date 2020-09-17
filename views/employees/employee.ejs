@@ -1,0 +1,23 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="center">
+        <img src="<%= employee.image %>" alt="" />
+        <br>
+        <br>
+    </div>
+    <div class="center">
+        <h3>
+            Employee Name : <%= employee.employeeName %>
+        </h3>
+        <h3>
+            Job : <%= employee.job %>
+        </h3>
+        <h3>
+            Salary : <i class="fa fa-rupee"></i><%= employee.salary %>
+        </h3>
+            
+    </div>
+</div>
+
+<%- include('../partials/footer') %> 

@@ -1,0 +1,49 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 10px auto;">
+            <div style="padding: 10px;">
+                <h2 style="margin: 10px auto;"><span class="glyphicon glyphicon-plus"></span> Add Product</h2>
+            </div> 
+            <form action="/products/addproduct" method="POST">
+                Enter Product Id : 
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[productId]">
+                </div>
+                Enter Product Name :
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[productName]">
+                </div> 
+                Enter Product Price <i class="fa fa-rupee"></i>:
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[productPrice]">
+                </div>
+                Select Active Status:
+                <div class="form-group">
+                    <select class="form-control" name="product[active]">
+                        <option value="Y">Y</option>
+                        <option value="N">N</option>
+                    </select>
+                </div>
+                Select Category : 
+                <div class="form-group"> 
+                    <select class="form-control"  name="product[category]">
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category._id %>"><%= category.catName %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                Enter Image :
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[image]">
+                </div>    
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %> 

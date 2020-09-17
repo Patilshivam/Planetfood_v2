@@ -1,0 +1,38 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 10px auto;">
+            <div style="padding: 10px;">
+                <h2 style="margin: 10px auto;"><span class="glyphicon glyphicon-plus"></span> Edit Employee</h2>
+            </div> 
+            <form action="/employees/<%= employee._id %>?_method=PUT " method="POST">
+                Enter Employee Id : 
+                <div class="form-group">
+                    <input type="text" class="form-control" disabled value="<%= employee.employeeId %>" name="employee[employeeId]">
+                </div>
+                Enter Employee Name :
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= employee.employeeName %>" name="employee[employeeName]">
+                </div>
+                Enter Employee Job :
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= employee.job %>" name="employee[job]">
+                </div>
+                Enter Employee Salary <i class="fa fa-rupee"></i> :
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= employee.salary %>" name="employee[salary]">
+                </div>
+                Enter Employee Image:
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= employee.image %>" name="employee[image]">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Edit Employee</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %> 

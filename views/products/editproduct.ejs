@@ -1,0 +1,49 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 10px auto;">
+            <div style="padding: 10px;">
+                <h2 style="margin: 10px auto;"><span class="glyphicon glyphicon-minus"></span> Edit Product</h2>
+            </div> 
+            <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+                Enter Product Id : 
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= product.productId %>" disabled name="product[productId]">
+                </div>
+                Enter Product Name :
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= product.productName %>" name="product[productName]">
+                </div> 
+                Enter Product Price <i class="fa fa-rupee"></i>:
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= product.productPrice %>" name="product[productPrice]">
+                </div>
+                Select Active Status:
+                <div class="form-group">
+                    <select class="form-control" name="product[active]" selected="<%= product.active %>">
+                        <option value="Y">Y</option>
+                        <option value="N">N</option>
+                    </select>
+                </div>
+                Select Category : 
+                <div class="form-group"> 
+                    <select class="form-control" name="product[category]" selected="<%= category.catName %>">
+                        <% category.forEach(category => { %>
+                            <option value="<%= category._id %>"><%= category.catName %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                Enter Image :
+                <div class="form-group">
+                    <input type="text" class="form-control" value="<%= product.image %>" name="product[image]">
+                </div>    
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %> 

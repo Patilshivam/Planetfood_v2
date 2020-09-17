@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>    
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Order Date <span class="glyphicon glyphicon-calendar"></span></th>
+            <th>Order gst %</th>
+            <th>Order gst amount ( <i class="fa fa-rupee"></i> )</th>
+            <th>Order discount %</th>
+            <th>Order grand total ( <i class="fa fa-rupee"></i> )</th>
+            <th>Order Amount ( <i class="fa fa-rupee"></i> )</th>
+            <th>Order Placed By</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach(order => { %>
+                <tr>
+                    <td><%= order.orderId %></td>
+                    <td><%= order.orderDate.toDateString() %></td>
+                    <td><%= order.gst %>%</td>
+                    <td> <i class="fa fa-rupee"></i> <%= order.gstAmount %></td>
+                    <td><%= order.discount %>%</td>
+                    <td><i class="fa fa-rupee"></i> <%= order.gtotal %></td>
+                    <td><i class="fa fa-rupee"></i> <%= order.orderAmount %></td>
+                    <td><%= order.userName %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer') %>   

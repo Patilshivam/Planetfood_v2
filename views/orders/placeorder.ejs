@@ -1,0 +1,67 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 10px auto;">
+            <div style="padding: 10px;">
+                <h3 style="margin: 10px auto;"><span class="glyphicon glyphicon-plus"></span> Place Order</h3>
+            </div>   
+            <form action="/orders/finalOrderPlace" method="POST">
+                <label for="Order Id">Order Id</label> 
+                <div class="form-group"> 
+                    <input class="form-control" type="text" name="orderId">
+                </div>
+                <label for="gst">GST %</label>    
+                <div class="form-group">
+                    <input class="form-control" type="text" name="gst" value="<%= orderData.gst %>">
+                </div>
+                <label for="gstamount">GST Amount</label>    
+                <div class="form-group">
+                    <input class="form-control" type="text" name="gstAmount" value="<%= orderData.gstamount %>"> 
+                </div>
+                <label for="discount">Discount %</label>    
+                <div class="form-group">
+                    <input class="form-control" type="text" name="discount" value="<%= orderData.discount %>">
+                </div>
+                <label for="gtotal">Total Amount</label>    
+                <div class="form-group">
+                    <input class="form-control" type="text" name="gtotal" value="<%= orderData.gtotal %>">
+                </div>
+                <label for="ordertotal">Order Total <i class="fa fa-rupee"></i></label>    
+                <div class="form-group">
+                    <input class="form-control" type="text" name="orderAmount" value="<%= orderData.ordertotal %>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Qty</th>
+            <th>Remove Order</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% orderList.forEach(order => { %>
+                <tr>
+                    <td><%= order.selectedProductId %></td>
+                    <td><%= order.productName %></td>
+                    <td><%= order.productPrice %></td>       
+                    <td><%= order.quantity %></td>       
+                    <td><a href="">Remove</a></td>   
+                </tr>
+            <% }); %> 
+        </tbody>
+    </table>
+    <a class="btn btn-primary btn-md" href="/orders/makeorder">Add Product</a> 
+    <a class="btn btn-primary btn-md" href="/">Cancel Order</a> 
+</div>
+
+<%- include('../partials/footer') %> 
